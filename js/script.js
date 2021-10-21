@@ -18,7 +18,9 @@ let pokemonList = [
 
 for (let i = 0; i < pokemonList.length; i++) {
 	document.write(`<html><body><div class=pokeList>${pokemonList[i].name} height: ${pokemonList[i].height}</div></body></html>`);
+	//Adds Pokemon names and heights along with height description.
 	if (pokemonList[i].height > 6) {
+	// If statement denoting condition for below message. HTML included to add message to div class .pokeList 
 		document.write(`<html><body><div class=pokeList> -Thats a bigun!</div></body></html>`);
 	}
 }
