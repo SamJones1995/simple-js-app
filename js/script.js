@@ -17,9 +17,9 @@ let pokemonList = [
 ];
 
 for (let i = 0; i < pokemonList.length; i++) {
-	document.write(pokemonList[i].name + ' height:' + pokemonList[i].height);
+	document.write(`<html><body><div class=pokeList>${pokemonList[i].name} height: ${pokemonList[i].height}</div></body></html>`);
 	if (pokemonList[i].height > 6) {
-		document.write(' -Thats a bigun!');
+		document.write(`<html><body><div class=pokeList> -Thats a bigun!</div></body></html>`);
 	}
 }
 

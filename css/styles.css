@@ -1,0 +1,29 @@
+.pokeList {
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.6;
+	text-align: center;
+	background-color: #e0b354;
+   border-radius: 75%;
+   width: 700px;
+   min-height: auto;
+   margin: auto auto;
+   padding: 2px;
+}
+
+body {
+	background-color: #357b70;
+}
+
+.pokeHead {
+	font-family: "Lato", sans-serif;
+	text-align: center;
+	background-color: #e0b354;
+   border-radius: 75%;
+}
+
+@media all and (max-width: 500px) {
+.pokeList {
+		max-width: 450px;
+	}
