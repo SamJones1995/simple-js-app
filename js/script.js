@@ -4,24 +4,23 @@ let pokemonList = [
 		height: 7,
 		type: ['grass','poison'],
 	},
-	Charmander = {
+	 CHarmander = {
 		name: "Charmander",
 		height: 6,
 		type: 'fire'
 	},
-	Squirtle = {
+	 Squirtle = {
 		name: "Squirtle",
 		height: 5,
 		type: 'water'
 	}	
 ];
-
-for (let i = 0; i < pokemonList.length; i++) {
-	document.write(`<html><body><div class=pokeList>${pokemonList[i].name} height: ${pokemonList[i].height}</div></body></html>`);
+ 
+pokemonList.forEach(function(pokemon) {
+	document.write(`<html><body><div class=pokeList>${pokemon.name} height: ${pokemon.height}</div></body></html>`);
 	//Adds Pokemon names and heights along with height description.
-	if (pokemonList[i].height > 6) {
+	if (pokemon.height > 6) {
 	// If statement denoting condition for below message. HTML included to add message to div class .pokeList 
 		document.write(`<html><body><div class=pokeList> -Thats a bigun!</div></body></html>`);
 	}
-}
-
+});
