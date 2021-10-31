@@ -1,22 +1,38 @@
-let pokemonList = [
-	Bulbasaur = {
-		name: "Bulbasaur",
-		height: 7,
-		type: ['grass','poison'],
-	},
-	 CHarmander = {
-		name: "Charmander",
-		height: 6,
-		type: 'fire'
-	},
-	 Squirtle = {
-		name: "Squirtle",
-		height: 5,
-		type: 'water'
-	}	
-];
+let pokemonRepository = (function () {
+	let pokemonList = [
+		Bulbasaur = {
+			name: "Bulbasaur",
+			height: 7,
+			type: ['grass','poison'],
+		},
+		 CHarmander = {
+			name: "Charmander",
+			height: 6,
+			type: 'fire'
+		},
+		 Squirtle = {
+			name: "Squirtle",
+			height: 5,
+			type: 'water'
+		}	
+	];
+	function add(pokemon) {
+		pokemonList.push(pokemon);
+	}
+
+	function getAll() {
+		return pokemonList;
+	}
+
+	return {
+		add: add,
+		getAll: getAll()
+	};
+})();
+
+
  
-pokemonList.forEach(function(pokemon) {
+pokemonRepository.getAll.forEach(function(pokemon) {
 	document.write(`<html><body><div class=pokeList>${pokemon.name} height: ${pokemon.height}</div></body></html>`);
 	//Adds Pokemon names and heights along with height description.
 	if (pokemon.height > 6) {
