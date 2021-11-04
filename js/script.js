@@ -24,19 +24,34 @@ let pokemonRepository = (function () {
 		return pokemonList;
 	}
 
+	function showDetails(pokemon){
+		console.log(pokemon.name);
+	}
+
+	function addListItem(pokemon) {
+		let pokeList = document.querySelector('.pokemon-list');
+		let listItem = document.createElement('li');
+		let button = document.createElement('button');
+		button.innerText = (pokemon.name);
+		button.classList.add('button-class');
+		//Event listener to make showDetails function when Pokemon button is clicked
+		button.addEventListener('click', function(event) {
+			showDetails(pokemon);
+		})
+		listItem.appendChild(button);
+		pokeList.appendChild(listItem);
+	}
+
 	return {
 		add: add,
-		getAll: getAll()
+		getAll: getAll,
+		addListItem: addListItem
 	};
+
 })();
 
 
  
-pokemonRepository.getAll.forEach(function(pokemon) {
-	document.write(`<html><body><div class=pokeList>${pokemon.name} height: ${pokemon.height}</div></body></html>`);
-	//Adds Pokemon names and heights along with height description.
-	if (pokemon.height > 6) {
-	// If statement denoting condition for below message. HTML included to add message to div class .pokeList 
-		document.write(`<html><body><div class=pokeList> -Thats a bigun!</div></body></html>`);
-	}
-});
+pokemonRepository.getAll().forEach(function(pokemon) {
+	pokemonRepository.addListItem(pokemon);
+	});
