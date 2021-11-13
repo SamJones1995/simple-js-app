@@ -15,7 +15,7 @@ let pokemonRepository = (function () {
 		let listItem = document.createElement('li');
 		let button = document.createElement('button');
 		button.innerText = pokemon.name;
-		button.classList.add('button-class');
+		button.classList.add('btn');
 		button.setAttribute("data-target", "#exampleModal");
 		button.setAttribute("data-toggle", "modal");
 		//Event listener to make showDetails function when Pokemon button is clicked
@@ -27,7 +27,7 @@ let pokemonRepository = (function () {
 		pokeList.appendChild(listItem);
 		
 	}
-
+	//pulls pokemon list from json 
 	function loadList() {
 		return fetch(apiUrl).then(function (response){
 			return response.json();
@@ -43,7 +43,7 @@ let pokemonRepository = (function () {
 			console.error(e);
 		})
 	}
-
+	//pulls pokemon details from json
 	function loadDetails(item) {
 		let url = item.detailsUrl;
 		return fetch(url).then(function(response) {
