@@ -9,12 +9,24 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
   <body>
-    <h1 class=pokeHead>Gotta Catch 'em All!</h1>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
-      Launch demo modal
-    </button>
-
+  <header>
+    <nav class="navbar navbar-expand-md fixed-top">
+        <a class="navbar-brand" href="#">
+          Pokedex
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!--searchbar-->!
+          <form class="form-row form-inline my-2 my-lg-0">
+            <input class = "form-control mr-sm-2" type  = "search" placeholder="Search Pokemon" aria-label="Search" id="searchbar">
+          <button class="btn btn-secondary" type="submit"> Search 
+          </button>
+        </form>
+      </div>
+    </nav>
+  </header>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
