@@ -49,18 +49,18 @@ let pokemonRepository = (function () {
 		let pokeList = document.querySelector('.pokemon-list');
 		let listItem = document.createElement('li');
 		let button = document.createElement('button');
-		let url = pokemon.detailsUrl;
 
 		button.innerText = pokemon.name;
-		button.classList.add('btn');
+		button.classList.add('btn', 'pokemonButton');
 		button.setAttribute('data-target', '#exampleModal');
 		button.setAttribute('data-toggle', 'modal');
 		//Event listener to make showDetails function when Pokemon button is clicked
 		button.addEventListener('click', function() {
 			showDetails(pokemon);
 		});
-		listItem.classList.add('list-group-item', 'col-lg-4', 'col-md-6');
-		button.classList.add('btn', 'btn-warning','btn-block', 'pokemon-button', 'border', 'border-secondary');
+		listItem.classList.add('list-group-item', 'border-0', 'align-items-center');
+
+
 		listItem.appendChild(button);
 		pokeList.appendChild(listItem);
 
@@ -114,11 +114,35 @@ function showModal(pokemon) { //Modal function
 
 })();
 
+let scrollButton = document.getElementById('btn-back-to-top');
+window.onscroll = function() {
+	scrollFunction();
+};
+
+function scrollFunction() {
+	if (
+		document.body.scrollTop > 20 ||
+		document.documentElement.scrollTop > 20
+	) {
+		scrollButton.style.display = 'block';
+	} else {
+		scrollButton.style.display = 'none';
+	}
+}
+
+scrollButton.addEventListener('click', backToTop);
+
+function backToTop() {
+	document.body.scrollTop = 0;
+	document.documentElement.scrollTop = 0;
+}
+	/* eslint-disable no-undef */
 $(document).ready(function(){
-	$("#filter").on("keyup", function() {
+	$('#filter').on('keyup', function() {
 		var value = $(this).val().toLowerCase();
-		$("#listDIV *").filter(function() {
+		$('#listDIV *').filter(function() {
 			$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+	/* eslint-enable no-undef */
 		});
 	});
 });
