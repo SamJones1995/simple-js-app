@@ -20,8 +20,8 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <!--searchbar-->!
           <form class="form-row form-inline my-2 my-lg-0">
-            <input class = "form-control mr-sm-2" type  = "search" placeholder="Search Pokemon" aria-label="Search" id="searchbar">
-          <button class="btn btn-secondary" type="submit"> Search 
+            <input class = "form-control mr-sm-2" type = "text" placeholder="Search Pokemon" aria-label="Search" id="filter">
+          <button class="btn btn-secondary" type="submit"> Search
           </button>
         </form>
       </div>
@@ -43,7 +43,11 @@
         </div>
       </div>
     </div>
-    <ul class ='pokemon-list list-group'></ul>
+    <!--List of pokemon-->!
+    <div class="container list" id="listDIV">
+      <ul class ="pokemon-list list-group" id="myList"></ul>
+    </div>
+
     <script src="js/promise-polyfill.js"></script>
     <script src="js/fetch.polyfill.js"></script>
     <script
